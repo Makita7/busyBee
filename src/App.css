@@ -1,0 +1,17 @@
+
+
+.container{
+  background-image: url('./assets/bc-test.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 441px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  color: aliceblue;
+}
+
+.text-center{
+  text-align: center;
+}
