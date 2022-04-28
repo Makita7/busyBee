@@ -1,19 +1,25 @@
-import React, { useEffect, useState } from 'react'
+//import { useEffect, useState } from 'react';
+import moment from "moment";
 
 function Clock() {
-    const [time, setTime] = useState();
+    
+  //withought moment js
+  // const [time, setTime] = useState();
 
-    useEffect(() =>{
-      setInterval(() =>{
-        const date = new Date();
-        setTime(date.toLocaleTimeString());
-      }, 1000);
-    }, []);
+  //   useEffect(() =>{
+  //     setInterval(() =>{
+  //       const date = new Date();
+  //       setTime(date.toLocaleTimeString());
+  //     }, 1000);
+  //   }, []);
+
+  let Time = moment().format('h:mm');
+  let TimeTwo = moment().format('A');
 
   return (
-    <div>
-        <h3>Clock</h3>
-        <p>{time}</p>
+    <div className="clock flexbox">
+        <p>{Time}</p>
+        <p className="pm">{TimeTwo}</p>
     </div>
   )
 }

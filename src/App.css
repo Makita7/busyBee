@@ -1,4 +1,8 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,300;0,400;0,600;0,700;1,200&display=swap');
+/* font-family: 'Josefin Slab', serif; */
+
+/* GENERAL */
 
 .container{
   background-image: url('./assets/bc-test.png');
@@ -10,8 +14,73 @@
   margin-right: auto;
   margin-top: 1rem;
   color: aliceblue;
+  position: relative;
+  border-radius: 25px;
+}
+
+.flexbox{
+  display: flex;
+  vertical-align: middle !important;
 }
 
 .text-center{
   text-align: center;
+}
+
+a{
+  color: white;
+  padding: 0 0.6rem;
+  font-weight: 500;
+  text-decoration: none;
+  text-shadow: 2px 2px 8px #000000;
+}
+
+.navFooter{
+  position: absolute;
+  bottom: 0;
+  margin-left: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* Titles */
+h1, h2, h3, h4, h5{
+  font-family: 'Josefin Slab', serif;
+  text-shadow: 2px 2px 8px #000000;
+}
+
+p{
+  font-family: 'Josefin Slab', serif;
+  text-shadow: 2px 2px 8px #000000;
+}
+
+/* HOME */
+
+.clock{
+  font-size: 4.2em;
+  padding-left: 9.5rem;
+}
+
+.clock p{
+  padding-top: 2.8rem;
+  margin: 0;
+}
+
+.pm{
+  font-size: 0.35em;
+  margin-top: 0.5rem !important;
+}
+
+.day{
+  font-size: 1.85em;
+}
+
+.date{
+  font-weight: 600;
+  margin: 0;
+}
+
+.year{
+  margin-top: -1.5rem;
+  font-weight: bold;
+  font-size: 1.1em;
 }
