@@ -1,28 +1,52 @@
 import axios from "axios";
 import { useState } from "react";
 
-const KEY = 'Zt6SkKGsxV6CetGhxg5JSa1XSKBi9rP1';
-const Location = 'http://dataservice.accuweather.com/locations/v1/cities/ipaddress';
-const BASE_URl = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${Location}`;
-const CROSS_DOMAIN = 'http://the-ultimate-api-challange.herokuapp.com';
-const REQUEST_URL = `${CROSS_DOMAIN}/${BASE_URl}`;
+//const KEY = 'Zt6SkKGsxV6CetGhxg5JSa1XSKBi9rP1';
+//const Location = 'http://dataservice.accuweather.com/locations/v1/cities/ipaddress';
+const BASE_URL = 'https://www.metaweather.com/api/location';
+const CROSS_DOMAIN = 'https://the-ultimate-api-challenge.herokuapp.com';
+const REQUEST_URL = `${CROSS_DOMAIN}/${BASE_URL}`;
+
 
 const useForecast = () => {
   const [ error, setError ] = useState(false);
   const [ loading, setLoading ] = useState(false);
   const [ forecast, setForecast ] = useState(null);
   
-  const SubmitRequest = ( locations ) =>{
-    // const { data } = await axios(`${REQUEST_URL}/search`,{params: { queries:locations }});
-    console.log({ locations });
+  const getWoeid = async ( location ) => {
+    const { data } = await axios(`${REQUEST_URL}/search`, { params: { query: location } });
+    console.log({ data });
+  
+    if(!data || data.length === 0){
+        setError('No such location');
+        return;
+    }
 
-    // if(!data || data.length === 0){
-    //     setError('No such location');
-    //     return;
-    // }
+    return data;
 
-    // const response = await axios(`${REQUEST_URL}/${data[0].woeld}`);
-    // console.log(response);
+  }
+
+  const getForecastData = async ( woeid ) => {
+    const { data } = await axios(`${REQUEST_URL}/${woeid}`);
+
+    if(!data || data.length === 0){
+      setError('Something went wrong!');
+      return;
+  }
+
+    return data;
+
+  }
+
+  const SubmitRequest = async ( location ) =>{
+    setLoading(true);
+    setError(false);
+    
+    const response = await getWoeid(location);
+    const data = await getForecastData(response[0].woeid);
+
+    console.log({data});
+
   }
 
 
