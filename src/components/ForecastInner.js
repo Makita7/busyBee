@@ -1,8 +1,11 @@
-import React from 'react'
+import useForecast from "../hooks/useForecast";
 
-function ForecastInner() {
+const ForecastInner = ({forecast}) => {
+  // const { forecast } = useForecast();
+  console.log(forecast);
+
   return (
-    <div>ForecastInner</div>
+    <div></div>
   )
 }
 

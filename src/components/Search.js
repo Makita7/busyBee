@@ -12,7 +12,7 @@ function Search({ submitSearch }) {
 
 
   return (
-    <form onSubmit={onSubmit}>
+    <form className='search' onSubmit={onSubmit}>
         <input
             type='text'
             aria-label='location'
@@ -22,7 +22,7 @@ function Search({ submitSearch }) {
             onChange={ e => setLocation(e.target.value)}
         />
 
-        <button type='submit' onSubmit={onSubmit}>Search</button>
+        <button className='Btn' type='submit' onSubmit={onSubmit}>Search</button>
     </form>
   )
 }

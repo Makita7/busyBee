@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 
 const Error = ({ message }) => {
   return (
-    <div>
+    <p>
         {message}
-    </div>
+    </p>
   );
 }
 
