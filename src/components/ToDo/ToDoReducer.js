@@ -1,4 +1,4 @@
-import { useReducer, useState } from "react"
+import { useReducer, useState, useEffect } from "react"
 
 
 
@@ -7,6 +7,7 @@ const ACTIONS = {
     DELETE: 'delete-toDo',
     TOGGLE: 'toggle-toDo',
     CLEAR: 'clear-list',
+    LOCAL: 'get-local-storage',
 }
 
 
@@ -28,6 +29,7 @@ function Reducer( list, action ){
 
         case ACTIONS.CLEAR:
             return list = []
+
 
         default:
             return list;
@@ -56,7 +58,7 @@ function ToDoItem({ list, dispatch }){
 
 
 export function ToDo(){
-    const [ list, dispatch ] = useReducer( Reducer, [] );
+    const [ list, dispatch ] = useReducer( Reducer, [] , (initial) => JSON.parse(localStorage.getItem('todoItems')) );
     const [ name, setName ] = useState('');  
 
     function handleSubmit(e){
@@ -64,6 +66,10 @@ export function ToDo(){
         dispatch({ type: ACTIONS.ADD_TODO, payload: { name: name } });
         setName('');
     }
+
+    useEffect(() => {
+        localStorage.setItem('todoItems', JSON.stringify(list));
+    },[list]);
 
     return(
         <div className="toDo">
