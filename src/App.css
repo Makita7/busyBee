@@ -128,3 +128,29 @@ input::placeholder{
   font-weight: bold;
   font-size: 2rem;
 }
+
+
+/* TO DO LIST */
+
+.toDoTiltle{
+  padding-top: 1.9rem;
+}
+
+.flex{
+  display: flex;
+}
+
+.toDoList{
+  margin-left: 1.5rem;
+}
+
+.toDoItem.text{
+  width: 50%;
+  text-align: left;
+  text-transform: capitalize;
+}
+
+.toDoItem{
+  margin: 0.2rem 1rem;
+}
+
