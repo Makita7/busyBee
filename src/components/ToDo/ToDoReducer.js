@@ -7,7 +7,6 @@ const ACTIONS = {
     DELETE: 'delete-toDo',
     TOGGLE: 'toggle-toDo',
     CLEAR: 'clear-list',
-    LOCAL: 'get-local-storage',
 }
 
 

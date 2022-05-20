@@ -13,7 +13,7 @@ const Moodtracker = () =>{
   }, [])
 
   useEffect(() =>{
-    console.log('fire');
+    // console.log('fire');
     localStorage.setItem('mood', JSON.stringify(mood));
   }, [mood]);
 
