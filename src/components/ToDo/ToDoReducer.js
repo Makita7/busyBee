@@ -66,17 +66,20 @@ export function ToDo(){
     }
 
     return(
-        <>
+        <div className="toDo">
+
             {list.map( list => {
                 return(
                     <ToDoItem key={list.id} list={list} dispatch={dispatch} />
                 );
             })}
-            <button onClick={() => dispatch({ type: ACTIONS.CLEAR }) }>CLEAR</button>
+
             <form onSubmit={ handleSubmit }>
                 <input placeholder="write new task" type='text' value={name} onChange={ e => setName(e.target.value)} />
             </form>
-        </>
+
+            <button onClick={() => dispatch({ type: ACTIONS.CLEAR })} className="clear" >CLEAR</button>
+        </div>
     );
 }
 
