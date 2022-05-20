@@ -154,3 +154,12 @@ input::placeholder{
   margin: 0.2rem 1rem;
 }
 
+.incomplete {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.complete {
+  color: rgb(159 143 42);
+  font-weight: 700;
+}
